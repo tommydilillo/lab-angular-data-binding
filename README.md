@@ -4,9 +4,9 @@
 
 ## Introduction
 
-At this point in the course, some of us may be reminiscing about times before the course, when we used to work out, and we were fit and in shape.  Surprising as it may be, spending many hours each day sitting in front of the computer is not an effective way to attain, and maintain, a rock-hard physique.  
+At this point in the course, some of us may be reminiscing about times before the course, when we used to work out and we were fit and in shape.  Surprising as it may be, spending many hours each day sitting in front of the computer is not an effective way to attain, and maintain, a rock-hard physique.  
 
-Our solution: A Nutrition App. 
+Our solution: A nutrition app. 
 
 And it's your job to build it. 
 
@@ -33,9 +33,9 @@ $ git add .
 $ git commit -m "done"
 $ git push origin master
 ```
-Navigate to your repo and create a Pull Request from your master branch to the original repository master branch.
+Navigate to your repo and create a pull request from your master branch to the original repository master branch.
 
-In the Pull request name, add your name and last names separated by a dash "-"
+In the pull request name, add your name and last names separated by a dash "-"
 
 ## Instructions
 
@@ -45,7 +45,7 @@ In the `app-food-list` component, display a list of the foods. This should inclu
 
 Notice, we've already imported an array of objects containing food into the component.
 
-**Make sure the image's src property is properly bound** so that any time the value is changed in the Typescript class, the change is reflected in the DOM.  
+**Make sure the image's src property is properly bound** so that any time the value is changed in the TypeScript class, the change is reflected in the DOM.  
 
 ### Iteration 2 | Search Foods
 
@@ -77,7 +77,7 @@ The default quanitity should be 1.
 
 **Super Bonus**
 
-If the user has added more than 1 item of the same type to their list, don't display it twice. Instead, display the item's name, and the number of times it has been added.
+If the user has added more than one item of the same type to their list, don't display it twice. Instead, display the item's name, and the number of times it has been added.
 
 For instance:
 
