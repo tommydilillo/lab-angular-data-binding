@@ -1,0 +1,12 @@
+img {
+    height: 100px;
+}
+
+.food-list {
+    border: 3px solid grey;
+    padding: 10px;
+    margin: 5px;
+    width: 50vw;
+}
+
+
