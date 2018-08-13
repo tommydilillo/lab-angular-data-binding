@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import foods from '../foods';
+import { formArrayNameProvider } from '../../../node_modules/@angular/forms/src/directives/reactive_directives/form_group_name';
+
 
 @Component({
   selector: 'app-food-list',
@@ -8,11 +10,33 @@ import foods from '../foods';
 })
 export class FoodListComponent implements OnInit {
   foodList = [];
+  displayForm = 'display-none';
+  displayButton = '';
+
 
   constructor() { }
 
   ngOnInit() {
-    this.foodList = foods
+    this.foodList = foods;
   }
+
+  addFoodForm() {
+    this.displayForm = '';
+    this.displayButton = 'display-none';
+  }
+
+  addFood(food) {
+    console.log(`food: ${food}`)
+    this.foodList.push(food.value);
+
+    this.displayForm = 'display-none';
+    this.displayButton = '';
+  }
+
+
+
+
+
+
 
 }
