@@ -12,7 +12,8 @@ export class FoodListComponent implements OnInit {
   foodList = [];
   displayForm = 'display-none';
   displayButton = '';
-
+  todayList = []
+  todaysCalories: number = 0
 
   constructor() { }
 
@@ -33,6 +34,13 @@ export class FoodListComponent implements OnInit {
     this.displayButton = '';
   }
 
+  addTodayFood(food) {
+    this.todayList.push(food);
+    console.log(this.todayList)
+    this.todaysCalories += food.calories
+
+
+  }
 
 
 

@@ -9,23 +9,42 @@
 <!-- ADD FOOD FORM -->
 <form #f="ngForm" [class]="displayForm" (ngSubmit)="addFood(f)">
   <div>
-    <label for=" food-name">Name: </label>
+    <label for="food-name">Name: </label>
     <input type="text" ngModel name="name">
   </div>
   <div>
     <label>Calories: </label>
-    <input type="text" ngModel name="calories">
+    <input type="number" ngModel name="calories">
   </div>
   <div>
     <label>Image: </label>
     <input type="text" ngModel name="image">
   </div>
   <button (click)="addFood(food)">Submit</button>
+
 </form>
+
+<div *ngIf="todayList.length>0">
+  <h4>Today's Food:</h4>
+  <ul>
+    <div *ngFor="let food of todayList">
+      <li>{{food.name | uppercase}}: {{food.calories}} calories</li>
+    </div>
+  </ul>
+  <h5>Daily Total Calories: {{todaysCalories}}</h5>
+
+</div>
 
 <!--  FOOD LIST -->
 <div class="food-list" *ngFor="let food of foodList | filter: 'name': pattern; let i=index">
   <img [src]="food.image">
   <h3>{{food.name | uppercase}}</h3>
   <p>Calories:{{food.calories}}</p>
+  <form #g="ngForm" class="display-none" (ngSubmit)="addTodayFood(food, g)">
+    <input type="text" ngModel name="food.name">
+    <input type="number" ngModel name="food.calories">
+    <input type="text" ngModel name="food.image">
+  </form>
+  <button (click)="addTodayFood(food)">Eat Today!</button>
+
 </div>
