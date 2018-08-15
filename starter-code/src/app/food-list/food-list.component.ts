@@ -35,16 +35,14 @@ export class FoodListComponent implements OnInit {
   }
 
   addTodayFood(food) {
-    this.todayList.push(food);
-    console.log(this.todayList)
-    this.todaysCalories += food.calories
+    console.log(`foodz: ${food}`)
+    for (let i = 1; i <= food.value.quantity; i++) {
+      this.todayList.push(food);
+      this.todaysCalories += food.calories
 
+    }
+    console.log(`today's list: ${this.todayList}`)
 
   }
-
-
-
-
-
 
 }

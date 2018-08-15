@@ -8,6 +8,7 @@
 
 <!-- ADD FOOD FORM -->
 <form #f="ngForm" [class]="displayForm" (ngSubmit)="addFood(f)">
+  <h3>Add a food:</h3>
   <div>
     <label for="food-name">Name: </label>
     <input type="text" ngModel name="name">
@@ -20,6 +21,8 @@
     <label>Image: </label>
     <input type="text" ngModel name="image">
   </div>
+  <input class="display-none" type="number" ngModel name="quantity" value="1">
+
   <button (click)="addFood(food)">Submit</button>
 
 </form>
@@ -40,11 +43,15 @@
   <img [src]="food.image">
   <h3>{{food.name | uppercase}}</h3>
   <p>Calories:{{food.calories}}</p>
-  <form #g="ngForm" class="display-none" (ngSubmit)="addTodayFood(food, g)">
-    <input type="text" ngModel name="food.name">
-    <input type="number" ngModel name="food.calories">
-    <input type="text" ngModel name="food.image">
+
+  <form #g="ngForm" (ngSubmit)="addTodayFood(food, g)">
+    <input class="display-none" type="text" ngModel name="food.name">
+    <input class="display-none" type="number" ngModel name="food.calories">
+    <input class="display-none" type="text" ngModel name="food.image">
+    <label>Quantity:</label>
+    <input type="number" ngModel=1 name="food.quantity" min=1 value=1>
   </form>
+  <br>
   <button (click)="addTodayFood(food)">Eat Today!</button>
 
 </div>
